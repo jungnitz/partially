@@ -39,6 +39,12 @@
 /// > Usage example: `#[partially(as_type = "Option<f32>")]`.
 /// Instructs the macro to use the provided type instead of [`Option<T>`] when generating the field. Note that the provided type will be used verbatim, so if you expect an [`Option<T>`] value, you'll need to manually specify that.
 /// Note: When using `as_type`, the given type must `Into<BaseType>` where `BaseType` is the original field type. This is required for `Partial` trait implementation.
+/// ### skip_attributes
+/// > Usage example: `#[partially(skip_attributes)]`
+/// Instructs the macro to not add the existing attributes of the field to the generated struct's field.
+/// ### attribute
+/// > Usage example: `#[partially(attribute(serde(rename = "renamed")))]`
+/// Instructs the macro to add an attribute to the generated struct.
 ///
 /// ## Example
 /// ```
